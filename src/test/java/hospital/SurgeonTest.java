@@ -1,20 +1,20 @@
 package hospital;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NurseTest {
-    Nurse underTest = new Nurse("2","name", 5);
+public class SurgeonTest {
+    Surgeon underTest = new Surgeon("3", "name", "specialty", true);
     Patient sickPatient = new Patient();
 
     @Test
 
-    public void shouldIncreasePatientHealthFrom10to15(){
+    public void increaseTheHealthLevelOfAPatientFrom10To20WhenProvidedCare() {
         underTest.careForPatient(sickPatient);
         int patientHealthLevel = sickPatient.getHealthLevel();
-        assertEquals(15, patientHealthLevel);
+        assertEquals(20, patientHealthLevel);
     }
+
     @Test
 
     public void decreaseTheBloodLevelOfAPatientFrom20To15WhenBloodIsDrawn() {
@@ -25,8 +25,8 @@ public class NurseTest {
 
     @Test
 
-    public void shouldReturnASalaryOf50K() {
+    public void shouldReturnASalaryOf90K() {
         int salary = underTest.calculatePay();
-        assertEquals(50000, salary);
+        assertEquals(120000, salary);
     }
 }
